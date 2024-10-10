@@ -28,7 +28,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            '@[vid="more"] -(n) [text="电视剧"||text="纪录片"||text="国创"||text="番剧"||text="电影"||text="课堂"]',
+            '@[vid="more"] -(n) [text="电视剧"||text="纪录片"||text="国创"||text="番剧"||text="电影"||text="课堂"||text="综艺"]',
         },
         {
           key: 1,
