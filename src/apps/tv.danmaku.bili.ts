@@ -67,5 +67,23 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '功能类-关闭直播内容',
+      desc: '点击关闭',
+      fastQuery: true,
+      activityIds: 'tv.danmaku.bili.MainActivityV2',
+      rules: [
+        {
+          key: 0,
+          matches: '@[vid="more"] -(n) [vid="live_text_container"] >2 [text="直播"]',
+        },
+        {
+          key: 1,
+          preKeys: [0],
+          matches: '@[clickable=true] > [text="不感兴趣"]',
+        },
+      ],
+    },
   ],
 });
