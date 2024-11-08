@@ -76,7 +76,8 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          matches: '@[vid="more"] -(n) [vid="live_text_container"] >2 [text="直播"]',
+          matches:
+            '@[vid="more"] -(n) [vid="live_text_container"] >2 [text="直播"]',
         },
         {
           key: 1,
