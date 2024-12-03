@@ -81,11 +81,13 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          matches: '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [text="电视剧"||text="纪录片"||text="国创"||text="番剧"||text="电影"||text="课堂"||text="综艺"]',
+          matches:
+            '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [text="电视剧"||text="纪录片"||text="国创"||text="番剧"||text="电影"||text="课堂"||text="综艺"]',
         },
         {
           key: 2,
-          matches: '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [vid="ad_tag_v2"]',
+          matches:
+            '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [vid="ad_tag_v2"]',
         },
         {
           key: 3,
