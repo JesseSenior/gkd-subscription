@@ -69,7 +69,7 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '功能类-关闭直播内容',
+      name: '功能类-关闭首页推荐非视频内容',
       desc: '点击关闭',
       fastQuery: true,
       activityIds: 'tv.danmaku.bili.MainActivityV2',
@@ -81,8 +81,47 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          preKeys: [0],
-          matches: '@[clickable=true] > [text="不感兴趣"]',
+          matches: '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [text="电视剧"||text="纪录片"||text="国创"||text="番剧"||text="电影"||text="课堂"||text="综艺"]',
+        },
+        {
+          key: 2,
+          matches: '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [vid="ad_tag_v2"]',
+        },
+        {
+          key: 3,
+          matches: '@[vid="more"] -(n) [vid="desc_content"] >2 [vid="ad_tag"]',
+        },
+        {
+          key: 4,
+          matches: '@[vid="more"] -(n) [vid="desc_content"] >2 [text*="直播"]',
+        },
+        {
+          key: 10,
+          preKeys: [0, 1, 2, 3, 4],
+          matches: '@[clickable=true] > [text*="不感兴趣"||text="这个内容"]',
+        },
+        {
+          key: 11,
+          matches: '@[vid="more"] -(n) [vid="bottom_layout"] >2 [text*="竖屏"]',
+        },
+        {
+          key: 20,
+          preKeys: [11],
+          matches: '@[clickable=true] > [text="竖屏模式"]',
+        },
+        {
+          key: 21,
+          matches: '@[vid="inline_more"]',
+        },
+        {
+          key: 22,
+          preKeys: [21],
+          matches: '@[clickable=true] > [text="我不想看"]',
+        },
+        {
+          key: 23,
+          preKeys: [22],
+          matches: '@[clickable=true] > [text*="不感兴趣"||text="这个内容"]',
         },
       ],
     },
