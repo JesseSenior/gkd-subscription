@@ -66,12 +66,10 @@ export default defineGkdApp({
             '[vid="video_area_float_layer_container"] >2 [vid="close_layout"]',
         },
         {
-          matches:
-            '[vid="compose_view"] >2 @[clickable=true]',
+          matches: '[vid="compose_view"] >2 @[clickable=true]',
         },
         {
-          matches:
-            '[vid="subscribe"] +n @[vid="close"]',
+          matches: '[vid="subscribe"] +n @[vid="close"]',
         },
       ],
     },
