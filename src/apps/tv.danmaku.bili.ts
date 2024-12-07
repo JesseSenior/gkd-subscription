@@ -56,7 +56,7 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '局部广告-你喜欢视频的弹幕氛围吗',
+      name: '局部广告-你喜欢视频的XX氛围吗',
       desc: '点击关闭',
       fastQuery: true,
       activityIds: 'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
@@ -64,6 +64,14 @@ export default defineGkdApp({
         {
           matches:
             '[vid="video_area_float_layer_container"] >2 [vid="close_layout"]',
+        },
+        {
+          matches:
+            '[vid="compose_view"] >2 @[clickable=true]',
+        },
+        {
+          matches:
+            '[vid="subscribe"] +n @[vid="close"]',
         },
       ],
     },
@@ -126,6 +134,24 @@ export default defineGkdApp({
           matches: '@[clickable=true] > [text*="不感兴趣"||text="这个内容"]',
         },
       ],
+    },
+    {
+      key: 4,
+      name: '局部广告-视频悬浮广告',
+      desc: '领取大会员月卡,B站免流星卡',
+      fastQuery: true,
+      activityIds: [
+        'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+        'com.bilibili.video.videodetail.VideoDetailsActivity',
+      ],
+      rules: '[id="tv.danmaku.bili:id/toast_x"]',
+      snapshotUrls: [
+        'https://i.gkd.li/i/12892611',
+        'https://i.gkd.li/i/13308344',
+        'https://i.gkd.li/i/13538048', // activityIds: 'com.bilibili.video.videodetail.VideoDetailsActivity',
+      ],
+      exampleUrls:
+        'https://github.com/gkd-kit/inspect/assets/38517192/110db806-3f8b-4cd2-a445-06c5f5eb21eb',
     },
   ],
 });
