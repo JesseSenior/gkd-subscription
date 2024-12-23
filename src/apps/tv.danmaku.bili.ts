@@ -56,7 +56,7 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '局部广告-你喜欢视频的XX氛围吗',
+      name: '局部广告-你喜欢视频/评论的XX氛围吗',
       desc: '点击关闭',
       fastQuery: true,
       activityIds: 'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
@@ -70,6 +70,10 @@ export default defineGkdApp({
         },
         {
           matches: '[vid="subscribe"] +n @[vid="close"]',
+        },
+        {
+          matches:
+            '[text*="？"] +(n) @[clickable=true]',
         },
       ],
     },
@@ -104,8 +108,16 @@ export default defineGkdApp({
           matches: '@[vid="more"] -(n) [vid="desc_content"] >2 [text*="直播"]',
         },
         {
+          key: 5,
+          matches: '@[vid="more"] -(n) [vid="desc_content"] >3 [vid="tag_view"]',
+        },
+        {
+          key: 6,
+          matches: '@[vid="more"] -(n) [vid="bottom_layout"] > [vid="badge"]',
+        },
+        {
           key: 10,
-          preKeys: [0, 1, 2, 3, 4],
+          preKeys: [0, 1, 2, 3, 4, 5, 6],
           matches: '@[clickable=true] > [text*="不感兴趣"||text="这个内容"]',
         },
         {
