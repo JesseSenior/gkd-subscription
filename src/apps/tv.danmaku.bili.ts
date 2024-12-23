@@ -72,8 +72,7 @@ export default defineGkdApp({
           matches: '[vid="subscribe"] +n @[vid="close"]',
         },
         {
-          matches:
-            '[text*="？"] +(n) @[clickable=true]',
+          matches: '[text*="？"] +(n) @[clickable=true]',
         },
       ],
     },
@@ -109,7 +108,8 @@ export default defineGkdApp({
         },
         {
           key: 5,
-          matches: '@[vid="more"] -(n) [vid="desc_content"] >3 [vid="tag_view"]',
+          matches:
+            '@[vid="more"] -(n) [vid="desc_content"] >3 [vid="tag_view"]',
         },
         {
           key: 6,
