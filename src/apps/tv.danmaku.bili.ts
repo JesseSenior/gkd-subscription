@@ -71,9 +71,6 @@ export default defineGkdApp({
         {
           matches: '[vid="subscribe"] +n @[vid="close"]',
         },
-        {
-          matches: '[text*="？"] +(n) @[clickable=true]',
-        },
       ],
     },
     {
