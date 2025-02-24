@@ -4,7 +4,7 @@ import categories from './categories';
 import globalGroups from './globalGroups';
 
 export default defineGkdSubscription({
-  id: 233,
+  id: 234,
   name: 'Jesse Senior的GKD订阅',
   version: 0,
   author: 'Jesse Senior',
