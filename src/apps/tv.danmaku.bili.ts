@@ -65,9 +65,9 @@ export default defineGkdApp({
           matches:
             '[vid="video_area_float_layer_container"] >2 [vid="close_layout"]',
         },
-        {
-          matches: '[vid="compose_view"] >2 @[clickable=true]',
-        },
+        //{
+        //  matches: '[vid="compose_view"] >2 @[clickable=true]',
+        //},
         {
           matches: '[vid="subscribe"] +n @[vid="close"]',
         },
@@ -113,8 +113,12 @@ export default defineGkdApp({
           matches: '@[vid="more"] -(n) [vid="bottom_layout"] > [vid="badge"]',
         },
         {
+          key: 7,
+          matches: '@[vid="more"] -(n) [vid="cover_top_left_badge"]',
+        },
+        {
           key: 10,
-          preKeys: [0, 1, 2, 3, 4, 5, 6],
+          preKeys: [0, 1, 2, 3, 4, 5, 6, 7],
           matches: '@[clickable=true] > [text*="不感兴趣"||text="这个内容"]',
         },
         {
