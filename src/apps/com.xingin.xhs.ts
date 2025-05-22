@@ -9,6 +9,7 @@ export default defineGkdApp({
       name: '局部广告-搜索区域广告',
       desc: '点击关闭',
       fastQuery: true,
+      activityIds: 'com.xingin.alioth.search.GlobalSearchActivity',
       rules: [
         {
           key: 0,
