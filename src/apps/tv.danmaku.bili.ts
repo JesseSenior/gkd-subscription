@@ -65,9 +65,9 @@ export default defineGkdApp({
           matches:
             '[vid="video_area_float_layer_container"] >2 [vid="close_layout"]',
         },
-        //{
-        //  matches: '[vid="compose_view"] >2 @[clickable=true]',
-        //},
+        {
+          matches: 'RecyclerView >2 [vid="compose_view"] >2 TextView[text*="喜欢"] +(n) @[clickable=true]',
+        },
         {
           matches: '[vid="subscribe"] +n @[vid="close"]',
         },
@@ -163,6 +163,17 @@ export default defineGkdApp({
       ],
       exampleUrls:
         'https://github.com/gkd-kit/inspect/assets/38517192/110db806-3f8b-4cd2-a445-06c5f5eb21eb',
+    },
+    {
+      key: 5,
+      name: '局部广告-视频直播预约',
+      desc: '点击关闭',
+      activityIds: [
+        'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+        'com.bilibili.video.videodetail.VideoDetailsActivity',
+      ],
+      fastQuery: true,
+      rules: '[text="立即预约"] +(n) [vid="close"][desc="关闭按钮"][clickable=true]',
     },
   ],
 });

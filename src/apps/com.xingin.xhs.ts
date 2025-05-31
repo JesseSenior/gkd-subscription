@@ -23,5 +23,13 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 1,
+      name: '通知提示-打开通知',
+      desc: '点击关闭',
+      fastQuery: true,
+      activityIds: 'com.xingin.authorization.NotificationAuthorizationTranslucentActivity',
+      rules: 'ImageView[clickable=true]',
+    },
   ],
 });
