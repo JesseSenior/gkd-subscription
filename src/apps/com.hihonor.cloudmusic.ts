@@ -12,7 +12,8 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'com.netease.cloudmusic.activity.PlayerActivity',
-          matches: '[vid="dsl_dialog_root"] >(n) @ImageView[clickable=true][index=parent.childCount.minus(1)]',
+          matches:
+            '[vid="dsl_dialog_root"] >(n) @ImageView[clickable=true][index=parent.childCount.minus(1)]',
         },
       ],
     },
