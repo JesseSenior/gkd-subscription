@@ -9,7 +9,7 @@ export default defineGkdApp({
       name: '局部广告-评论区广告',
       desc: '点击关闭',
       fastQuery: true,
-      activityIds: '.comment.ui.activity.CommentListActivity',
+      activityIds: 'com.zhihu.android.comment.ui.activity.CommentListActivity',
       rules: '[text="广告"] +(n) ViewGroup[clickable=true][desc=""]',
     },
   ],
