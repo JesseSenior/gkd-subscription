@@ -177,5 +177,31 @@ export default defineGkdApp({
       rules:
         '[text="立即预约"] +(n) [vid="close"][desc="关闭按钮"][clickable=true]',
     },
+    {
+      key: 6,
+      name: '局部广告-你可能感兴趣',
+      desc: '点击x',
+      fastQuery: true,
+      activityIds: 'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+      rules: [
+        {
+          matches: '[text="你可能感兴趣"] +1 [desc="关闭"]',
+          snapshotUrls: 'https://i.gkd.li/i/20684425',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '权限提示-关注UP主时通知权限',
+      desc: '点击暂不开启',
+      fastQuery: true,
+      activityIds: 'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+      rules: [
+        {
+          matches: ['[text="订阅感兴趣的通知"]', '[text="暂不开启"]'],
+          snapshotUrls: 'https://i.gkd.li/i/20684449',
+        },
+      ],
+    },
   ],
 });
