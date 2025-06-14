@@ -118,8 +118,12 @@ export default defineGkdApp({
           matches: '@[vid="more"] -(n) [vid="cover_top_left_badge"]',
         },
         {
+          key: 8,
+          matches: '@[id="tv.danmaku.bili.adbiz:id/more_icon"]',
+        },
+        {
           key: 10,
-          preKeys: [0, 1, 2, 3, 4, 5, 6, 7],
+          preKeys: [0, 1, 2, 3, 4, 5, 6, 7, 8],
           matches: '@[clickable=true] > [text*="不感兴趣"||text="这个内容"]',
         },
         {
@@ -202,6 +206,18 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/20684449',
         },
       ],
+    },
+    {
+      key: 8,
+      name: '局部广告-评论区公告',
+      desc: '点击关闭',
+      activityIds: [
+        'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+        'com.bilibili.video.videodetail.VideoDetailsActivity',
+      ],
+      fastQuery: true,
+      rules:
+        '[vid="comment_ad_container"] >(n) ImageView[desc="关闭"]',
     },
   ],
 });
