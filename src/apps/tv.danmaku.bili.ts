@@ -216,8 +216,7 @@ export default defineGkdApp({
         'com.bilibili.video.videodetail.VideoDetailsActivity',
       ],
       fastQuery: true,
-      rules:
-        '[vid="comment_ad_container"] >(n) ImageView[desc="关闭"]',
+      rules: '[vid="comment_ad_container"] >(n) ImageView[desc="关闭"]',
     },
   ],
 });

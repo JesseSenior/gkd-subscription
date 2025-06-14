@@ -27,8 +27,7 @@ export default defineGkdApp({
         {
           key: 10,
           preKeys: [0],
-          matches:
-            '[text="虚假广告"]',
+          matches: '[text="虚假广告"]',
         },
       ],
     },
