@@ -198,5 +198,24 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 10,
+      name: '其他-（激进慎用！）关闭首页推荐低播放量内容',
+      desc: '点击关闭',
+      activityIds: 'tv.danmaku.bili.MainActivityV2',
+      fastQuery: true,
+      rules: [
+        {
+          key: 0,
+          matches:
+            '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > TextView[id="tv.danmaku.bili:id/cover_left_text1"][text!*="万"]',
+        },
+        {
+          key: 1,
+          preKeys: [0],
+          matches: '@[clickable=true] > [text="这个内容"]',
+        },
+      ],
+    },
   ],
 });
