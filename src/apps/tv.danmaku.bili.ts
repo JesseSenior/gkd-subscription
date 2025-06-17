@@ -27,29 +27,21 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          matches:
+          anyMatches: [
             '@[vid="more"] -(n) [text="电视剧"||text="纪录片"||text="国创"||text="番剧"||text="电影"||text="课堂"||text="综艺"]',
-        },
-        {
-          key: 1,
-          matches:
             '@[vid="more"] -(n) [vid="live_lottie_layout"] > [text="直播"]',
+            'ViewGroup[childCount<=5] > @[vid="more"][desc="更多操作"]',
+            '@[vid="more"][desc="更多操作"] -(n) [vid="game_button"]',
+          ],
         },
         {
-          key: 2,
-          matches: 'ViewGroup[childCount<=5] > @[vid="more"][desc="更多操作"]',
-        },
-        {
-          key: 3,
-          matches: '@[vid="more"][desc="更多操作"] -(n) [vid="game_button"]',
-        },
-        {
-          key: 10,
-          preKeys: [0, 1, 2, 3],
+          key: 8,
+          preKeys: [0],
           matches: '@[clickable=true] > [text="不感兴趣"||text="我不想看"]',
         },
         {
-          preKeys: [10],
+          key: 9,
+          preKeys: [8],
           matches: '[clickable=true][text="关闭"]',
         },
       ],
@@ -83,71 +75,35 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          matches:
+          anyMatches: [
             '@[vid="more"] -(n) [vid="live_text_container"] >2 [text="直播"]',
+            '@[vid="more"] -(n) [vid="desc_content"] >2 [text*="直播"]',
+            '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [text="电视剧"||text="纪录片"||text="国创"||text="番剧"||text="电影"||text="课堂"||text="综艺"]',
+            '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [vid="ad_tag_v2"]',
+            '@[vid="more"] -(n) [vid="desc_content"] >2 [vid="ad_tag"]',
+            '@[vid="more"] -(n) [vid="desc_content"] >3 [vid="tag_view"]',
+            '@[vid="more"] -(n) [vid="bottom_layout"] > [vid="badge"]',
+            '@[vid="more"] -(n) [vid="cover_top_left_badge"]',
+            '@[vid="more"] -(n) [vid="bottom_layout"] >2 [text*="竖屏"]',
+          ],
         },
         {
           key: 1,
-          matches:
-            '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [text="电视剧"||text="纪录片"||text="国创"||text="番剧"||text="电影"||text="课堂"||text="综艺"]',
-        },
-        {
-          key: 2,
-          matches:
-            '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [vid="ad_tag_v2"]',
-        },
-        {
-          key: 3,
-          matches: '@[vid="more"] -(n) [vid="desc_content"] >2 [vid="ad_tag"]',
-        },
-        {
-          key: 4,
-          matches: '@[vid="more"] -(n) [vid="desc_content"] >2 [text*="直播"]',
-        },
-        {
-          key: 5,
-          matches:
-            '@[vid="more"] -(n) [vid="desc_content"] >3 [vid="tag_view"]',
-        },
-        {
-          key: 6,
-          matches: '@[vid="more"] -(n) [vid="bottom_layout"] > [vid="badge"]',
-        },
-        {
-          key: 7,
-          matches: '@[vid="more"] -(n) [vid="cover_top_left_badge"]',
+          anyMatches: [
+            '@[id="tv.danmaku.bili.adbiz:id/more"||id="tv.danmaku.bili.adbiz:id/inline_more"]',
+            '@[vid="inline_more"]',
+          ],
         },
         {
           key: 8,
-          matches: '@[id="tv.danmaku.bili.adbiz:id/more_icon"]',
-        },
-        {
-          key: 10,
-          preKeys: [0, 1, 2, 3, 4, 5, 6, 7, 8],
-          matches: '@[clickable=true] > [text*="不感兴趣"||text="这个内容"]',
-        },
-        {
-          key: 11,
-          matches: '@[vid="more"] -(n) [vid="bottom_layout"] >2 [text*="竖屏"]',
-        },
-        {
-          key: 20,
-          preKeys: [11],
-          matches: '@[clickable=true] > [text="竖屏模式"]',
-        },
-        {
-          key: 21,
-          matches: '@[vid="inline_more"]',
-        },
-        {
-          key: 22,
-          preKeys: [21],
+          preKeys: [1],
           matches: '@[clickable=true] > [text="我不想看"]',
         },
         {
-          key: 23,
-          preKeys: [22],
-          matches: '@[clickable=true] > [text*="不感兴趣"||text="这个内容"]',
+          key: 9,
+          preKeys: [0, 1, 8],
+          matches:
+            '@[clickable=true] > [text*="不感兴趣"||text="这个内容"||text="竖屏模式"||text="相似内容过多"]',
         },
       ],
     },
@@ -217,6 +173,30 @@ export default defineGkdApp({
       ],
       fastQuery: true,
       rules: '[vid="comment_ad_container"] >(n) ImageView[desc="关闭"]',
+    },
+    {
+      key: 9,
+      name: '分段广告-视频播放页广告',
+      desc: '点击关闭',
+      activityIds: [
+        'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+        'com.bilibili.video.videodetail.VideoDetailsActivity',
+      ],
+      fastQuery: true,
+      rules: [
+        {
+          key: 0,
+          anyMatches: [
+            '[id="tv.danmaku.bili.adbiz:id/more_layout"]',
+            '[id="tv.danmaku.bili.adbiz:id/more"]',
+          ],
+        },
+        {
+          key: 1,
+          preKeys: [0],
+          matches: '@[clickable=true] > [text*="不感兴趣"]',
+        },
+      ],
     },
   ],
 });
