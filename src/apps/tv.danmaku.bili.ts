@@ -20,7 +20,7 @@ export default defineGkdApp({
     },
     {
       key: 1,
-      name: '分段广告-搜索结果广告',
+      name: '分段广告-相关视频列表广告',
       desc: '点击右下角[菜单]-点击[不感兴趣]',
       fastQuery: true,
       activityIds: 'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
@@ -165,7 +165,7 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '局部广告-评论区公告',
+      name: '局部广告-评论区广告',
       desc: '点击关闭',
       activityIds: [
         'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
@@ -189,6 +189,7 @@ export default defineGkdApp({
           anyMatches: [
             '[id="tv.danmaku.bili.adbiz:id/more_layout"]',
             '[id="tv.danmaku.bili.adbiz:id/more"]',
+            '[id="tv.danmaku.bili:id/more_layout"]',
           ],
         },
         {
