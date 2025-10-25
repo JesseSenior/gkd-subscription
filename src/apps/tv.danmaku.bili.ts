@@ -28,6 +28,8 @@ export default defineGkdApp({
         {
           key: 0,
           anyMatches: [
+            '@[vid="more"] -(n) [vid="ad_desc"]',
+            '@[vid="more"] -(n) [vid="bottom_container"]',
             '@[vid="more"] -(n) [text="电视剧"||text="纪录片"||text="国创"||text="番剧"||text="电影"||text="课堂"||text="综艺"]',
             '@[vid="more"] -(n) [vid="live_lottie_layout"] > [text="直播"]',
             'ViewGroup[childCount<=5] > @[vid="more"][desc="更多操作"]',
@@ -76,6 +78,8 @@ export default defineGkdApp({
         {
           key: 0,
           anyMatches: [
+            '@[vid="live_more"]',
+            '@[vid="more"] -(n) [vid="bottom_layout"][childCount=1]',
             '@[vid="more"] -(n) [vid="live_text_container"] >2 [text="直播"]',
             '@[vid="more"] -(n) [vid="desc_content"] >2 [text*="直播"]',
             '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [text="电视剧"||text="纪录片"||text="国创"||text="番剧"||text="电影"||text="课堂"||text="综艺"]',
@@ -187,6 +191,7 @@ export default defineGkdApp({
         {
           key: 0,
           anyMatches: [
+            '[vid="underplayer_container"] >(n) [id="tv.danmaku.bili:id/more"]',
             '[id="tv.danmaku.bili.adbiz:id/more_layout"]',
             '[id="tv.danmaku.bili.adbiz:id/more"]',
             '[id="tv.danmaku.bili:id/more_layout"]',
