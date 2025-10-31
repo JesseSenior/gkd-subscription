@@ -39,7 +39,8 @@ export default defineGkdApp({
         {
           key: 8,
           preKeys: [0],
-          matches: '@[clickable=true] > [text="不感兴趣"||text="我不想看"]',
+          matches:
+            '@[clickable=true] > [text="不感兴趣"||text="我不想看"||text="相似内容过多"]',
         },
         {
           key: 9,
@@ -84,6 +85,7 @@ export default defineGkdApp({
             '@[vid="more"] -(n) [vid="desc_content"] >2 [text*="直播"]',
             '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [text="电视剧"||text="纪录片"||text="国创"||text="番剧"||text="电影"||text="课堂"||text="综艺"]',
             '@[vid="more"] -(n) [vid="cover_bottom_info_container"] > [vid="ad_tag_v2"]',
+            '@[vid="more"] -(n) ViewGroup >2 [vid="ad_tag"]',
             '@[vid="more"] -(n) [vid="desc_content"] >2 [vid="ad_tag"]',
             '@[vid="more"] -(n) [vid="desc_content"] >3 [vid="tag_view"]',
             '@[vid="more"] -(n) [vid="bottom_layout"] > [vid="badge"]',
