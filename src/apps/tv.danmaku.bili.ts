@@ -98,6 +98,7 @@ export default defineGkdApp({
           anyMatches: [
             '@[id="tv.danmaku.bili.adbiz:id/more"||id="tv.danmaku.bili.adbiz:id/inline_more"]',
             '@[vid="inline_more"]',
+            '@[vid="ugc_more"]',
           ],
         },
         {

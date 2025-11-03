@@ -17,5 +17,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 1,
+      name: '其他-“我的”页面自动切换到收藏',
+      desc: '切换到收藏',
+      fastQuery: true,
+      rules: [
+        {
+          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
+          matches:
+            '[text="收藏"] < @LinearLayout[desc="收藏"] -(n) LinearLayout[desc="近期"][clickable=false]',
+          actionMaximum: 5,
+          resetMatch: 'app',
+        },
+      ],
+    },
   ],
 });
